@@ -19,7 +19,7 @@ public class ForeignExchangeController {
     ForeignExchangeService foreignExchangeService;
 
     @GetMapping("/getDailyForeignExchangeRates")
-    @Scheduled(cron = "0 43 20 * * ?", zone = "Asia/Taipei")
+    @Scheduled(cron = "0 0 18 * * ?", zone = "Asia/Taipei")
     public void getDailyForeignExchangeRates() {
         foreignExchangeService.getDailyForeignExchangeRates(null);
     }
