@@ -42,7 +42,7 @@ class DemoApplicationTests {
     void test1() throws ParseException {
         // 測試1:起始日期早於1年前(測試時間2024/1/21)，預測結果:日期區間不符
         DailyForeignExchangeRatesHistoryDto dto1 = new DailyForeignExchangeRatesHistoryDto();
-        dto1.setCurrency1("USD");
+        dto1.setCurrency("USD");
         dto1.setStartDate("2023/01/20");
         dto1.setEndDate("2024/01/19");
         ResponseVo dailyForeignExchangeRatesHistory = foreignExchangeService.getDailyForeignExchangeRatesHistory(dto1);
@@ -50,7 +50,7 @@ class DemoApplicationTests {
 
         // 測試2:起始日期晚於結束日期(測試時間2024/1/21)，預測結果:日期區間不符
         DailyForeignExchangeRatesHistoryDto dto2 = new DailyForeignExchangeRatesHistoryDto();
-        dto2.setCurrency1("USD");
+        dto2.setCurrency("USD");
         dto2.setStartDate("2024/01/20");
         dto2.setEndDate("2024/01/19");
         ResponseVo dailyForeignExchangeRatesHistory2 = foreignExchangeService.getDailyForeignExchangeRatesHistory(dto2);
@@ -58,7 +58,7 @@ class DemoApplicationTests {
 
         // 測試3:結束日期=系統日(測試時間2024/1/21)，預測結果:日期區間不符
         DailyForeignExchangeRatesHistoryDto dto3 = new DailyForeignExchangeRatesHistoryDto();
-        dto3.setCurrency1("USD");
+        dto3.setCurrency("USD");
         dto3.setStartDate("2024/01/19");
         dto3.setEndDate("2024/01/21");
         ResponseVo dailyForeignExchangeRatesHistory3 = foreignExchangeService.getDailyForeignExchangeRatesHistory(dto3);
@@ -66,7 +66,7 @@ class DemoApplicationTests {
 
         // 測試4:起始日期=1年前到結束日期=系統日-1(測試時間2024/1/21)，預測結果:回傳區間範圍資料
         DailyForeignExchangeRatesHistoryDto dto4 = new DailyForeignExchangeRatesHistoryDto();
-        dto4.setCurrency1("USD");
+        dto4.setCurrency("USD");
         dto4.setStartDate("2023/01/21");
         dto4.setEndDate("2024/01/20");
         ResponseVo dailyForeignExchangeRatesHistory4 = foreignExchangeService.getDailyForeignExchangeRatesHistory(dto4);

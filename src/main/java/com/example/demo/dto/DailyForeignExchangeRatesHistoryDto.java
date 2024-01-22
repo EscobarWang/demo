@@ -10,5 +10,5 @@ public class DailyForeignExchangeRatesHistoryDto {
     // 結束日期
     private String endDate;
     // 幣別
-    private String currency1;
+    private String currency;
 }
